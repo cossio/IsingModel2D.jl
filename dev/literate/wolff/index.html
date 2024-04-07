@@ -32,7 +32,7 @@ scatter!(ax, βs, mavg, color=:red, markersize=5, label=&quot;MC, L=70&quot;)
 errorbars!(ax, βs, mavg, mstd/2, color=:red, whiskerwidth=5)
 
 axislegend(ax, position=:rb)
-fig</code></pre><img src="11637677.png" alt="Example block output"/><h2 id="Typical-Wolff-clusters-at-criticality"><a class="docs-heading-anchor" href="#Typical-Wolff-clusters-at-criticality">Typical Wolff clusters at criticality</a><a id="Typical-Wolff-clusters-at-criticality-1"></a><a class="docs-heading-anchor-permalink" href="#Typical-Wolff-clusters-at-criticality" title="Permalink"></a></h2><pre><code class="language-julia hljs">import IsingModels as Ising
+fig</code></pre><img src="157cdaa1.png" alt="Example block output"/><h2 id="Typical-Wolff-clusters-at-criticality"><a class="docs-heading-anchor" href="#Typical-Wolff-clusters-at-criticality">Typical Wolff clusters at criticality</a><a id="Typical-Wolff-clusters-at-criticality-1"></a><a class="docs-heading-anchor-permalink" href="#Typical-Wolff-clusters-at-criticality" title="Permalink"></a></h2><pre><code class="language-julia hljs">import IsingModels as Ising
 using Random, Colors, ColorSchemes, CairoMakie
 Random.seed!(56) # reproducibility
 β = Ising.βc
@@ -48,7 +48,7 @@ hidedecorations!(ax)
 ax = Axis(fig[1,2], title=&quot;cluster&quot;)
 hmap = heatmap!(ax, cluster, colormap=cgrad([:white, :black], [0.5]; categorical=true))
 hidedecorations!(ax)
-fig</code></pre><img src="42e5b057.png" alt="Example block output"/><h2 id="Average-size-of-Wolff&#39;s-clusters-as-a-function-of-temperature"><a class="docs-heading-anchor" href="#Average-size-of-Wolff&#39;s-clusters-as-a-function-of-temperature">Average size of Wolff&#39;s clusters as a function of temperature</a><a id="Average-size-of-Wolff&#39;s-clusters-as-a-function-of-temperature-1"></a><a class="docs-heading-anchor-permalink" href="#Average-size-of-Wolff&#39;s-clusters-as-a-function-of-temperature" title="Permalink"></a></h2><pre><code class="language-julia hljs">import IsingModels as Ising
+fig</code></pre><img src="3ac4a1de.png" alt="Example block output"/><h2 id="Average-size-of-Wolff&#39;s-clusters-as-a-function-of-temperature"><a class="docs-heading-anchor" href="#Average-size-of-Wolff&#39;s-clusters-as-a-function-of-temperature">Average size of Wolff&#39;s clusters as a function of temperature</a><a id="Average-size-of-Wolff&#39;s-clusters-as-a-function-of-temperature-1"></a><a class="docs-heading-anchor-permalink" href="#Average-size-of-Wolff&#39;s-clusters-as-a-function-of-temperature" title="Permalink"></a></h2><pre><code class="language-julia hljs">import IsingModels as Ising
 using Random, Statistics, Colors, ColorSchemes, CairoMakie
 
 Random.seed!(1) # make reproducible
@@ -86,7 +86,7 @@ errorbars!(ax, Ts, clavg, clstd/2, color=:red, whiskerwidth=5)
 vlines!(ax, [1 / Ising.βc], label=L&quot;Onsager&#39;s $T_c$&quot;, color=:black, linestyle=:dash)
 
 axislegend(ax, position=:rt)
-fig</code></pre><img src="6613fa1d.png" alt="Example block output"/><h2 id="Wolff-explores-configurations-efficiently-at-the-critical-temperature"><a class="docs-heading-anchor" href="#Wolff-explores-configurations-efficiently-at-the-critical-temperature">Wolff explores configurations efficiently at the critical temperature</a><a id="Wolff-explores-configurations-efficiently-at-the-critical-temperature-1"></a><a class="docs-heading-anchor-permalink" href="#Wolff-explores-configurations-efficiently-at-the-critical-temperature" title="Permalink"></a></h2><p>The following example shows how at the critical temperature, the Metropolis sampler gets stuck in particular cluster structures. In contrast the Wolff algorihm explores diverse states.</p><pre><code class="language-julia hljs">using Statistics, CairoMakie, Random
+fig</code></pre><img src="31b14654.png" alt="Example block output"/><h2 id="Wolff-explores-configurations-efficiently-at-the-critical-temperature"><a class="docs-heading-anchor" href="#Wolff-explores-configurations-efficiently-at-the-critical-temperature">Wolff explores configurations efficiently at the critical temperature</a><a id="Wolff-explores-configurations-efficiently-at-the-critical-temperature-1"></a><a class="docs-heading-anchor-permalink" href="#Wolff-explores-configurations-efficiently-at-the-critical-temperature" title="Permalink"></a></h2><p>The following example shows how at the critical temperature, the Metropolis sampler gets stuck in particular cluster structures. In contrast the Wolff algorihm explores diverse states.</p><pre><code class="language-julia hljs">using Statistics, CairoMakie, Random
 import IsingModels as Ising
 
 Random.seed!(3) # reproducibility
@@ -118,7 +118,7 @@ lines!(ax, E_wolff[1:10:end] / N, label=&quot;wolff&quot;)
 lines!(ax, E_metro[1:1000:end] / N, label=&quot;metropolis&quot;, linewidth=2, color=:red)
 axislegend(ax, position = :rb)
 
-fig</code></pre><img src="0b2c934c.png" alt="Example block output"/><h2 id="Binder&#39;s-parameter"><a class="docs-heading-anchor" href="#Binder&#39;s-parameter">Binder&#39;s parameter</a><a id="Binder&#39;s-parameter-1"></a><a class="docs-heading-anchor-permalink" href="#Binder&#39;s-parameter" title="Permalink"></a></h2><p>As the system size grows, the crossing point of the different curves is the critical temperature.</p><pre><code class="language-julia hljs">using Statistics, CairoMakie, Random
+fig</code></pre><img src="e8b27924.png" alt="Example block output"/><h2 id="Binder&#39;s-parameter"><a class="docs-heading-anchor" href="#Binder&#39;s-parameter">Binder&#39;s parameter</a><a id="Binder&#39;s-parameter-1"></a><a class="docs-heading-anchor-permalink" href="#Binder&#39;s-parameter" title="Permalink"></a></h2><p>As the system size grows, the crossing point of the different curves is the critical temperature.</p><pre><code class="language-julia hljs">using Statistics, CairoMakie, Random
 import IsingModels as Ising
 
 Random.seed!(1) # make reproducible
@@ -140,7 +140,7 @@ end
 vlines!(ax, [1 / Ising.βc], label=L&quot;Onsager&#39;s $T_c$&quot;, color=:black, linestyle=:dash)
 axislegend(ax, position=:lb)
 
-fig</code></pre><img src="03320192.png" alt="Example block output"/><h2 id="Heat-capacity-vs.-exact-expression"><a class="docs-heading-anchor" href="#Heat-capacity-vs.-exact-expression">Heat capacity vs. exact expression</a><a id="Heat-capacity-vs.-exact-expression-1"></a><a class="docs-heading-anchor-permalink" href="#Heat-capacity-vs.-exact-expression" title="Permalink"></a></h2><pre><code class="language-julia hljs">using Statistics, CairoMakie, Random
+fig</code></pre><img src="4639a0a8.png" alt="Example block output"/><h2 id="Heat-capacity-vs.-exact-expression"><a class="docs-heading-anchor" href="#Heat-capacity-vs.-exact-expression">Heat capacity vs. exact expression</a><a id="Heat-capacity-vs.-exact-expression-1"></a><a class="docs-heading-anchor-permalink" href="#Heat-capacity-vs.-exact-expression" title="Permalink"></a></h2><pre><code class="language-julia hljs">using Statistics, CairoMakie, Random
 import IsingModels as Ising
 
 Random.seed!(1) # make reproducible
@@ -163,7 +163,7 @@ lines!(ax, Ts, Ising.onsager_heat_capacity.(βs), color=:black, label=&quot;exac
 vlines!(ax, [1 / Ising.βc], label=L&quot;Onsager&#39;s $T_c$&quot;, color=:black, linestyle=:dash)
 Legend(fig[1,2], ax)
 
-fig</code></pre><img src="826b4493.png" alt="Example block output"/><h2 id="Internal-energy-vs.-exact-expression"><a class="docs-heading-anchor" href="#Internal-energy-vs.-exact-expression">Internal energy vs. exact expression</a><a id="Internal-energy-vs.-exact-expression-1"></a><a class="docs-heading-anchor-permalink" href="#Internal-energy-vs.-exact-expression" title="Permalink"></a></h2><pre><code class="language-julia hljs">using Statistics, CairoMakie, Random
+fig</code></pre><img src="797f0b31.png" alt="Example block output"/><h2 id="Internal-energy-vs.-exact-expression"><a class="docs-heading-anchor" href="#Internal-energy-vs.-exact-expression">Internal energy vs. exact expression</a><a id="Internal-energy-vs.-exact-expression-1"></a><a class="docs-heading-anchor-permalink" href="#Internal-energy-vs.-exact-expression" title="Permalink"></a></h2><pre><code class="language-julia hljs">using Statistics, CairoMakie, Random
 import IsingModels as Ising
 
 Random.seed!(1) # make reproducible
@@ -189,4 +189,4 @@ lines!(ax, Ts, Ising.onsager_internal_energy.(βs), color=:black, label=&quot;ex
 vlines!(ax, [1 / Ising.βc], label=L&quot;Onsager&#39;s $T_c$&quot;, color=:black, linestyle=:dash)
 Legend(fig[1,2], ax)
 
-fig</code></pre><img src="09a993ce.png" alt="Example block output"/><hr/><p><em>This page was generated using <a href="https://github.com/fredrikekre/Literate.jl">Literate.jl</a>.</em></p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../metropolis/">« Metropolis</a><a class="docs-footer-nextpage" href="../hybrid/">Hybrid sampler »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="auto">Automatic (OS)</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.1.2 on <span class="colophon-date" title="Tuesday 14 November 2023 09:13">Tuesday 14 November 2023</span>. Using Julia version 1.9.3.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+fig</code></pre><img src="ef81de80.png" alt="Example block output"/><hr/><p><em>This page was generated using <a href="https://github.com/fredrikekre/Literate.jl">Literate.jl</a>.</em></p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../metropolis/">« Metropolis</a><a class="docs-footer-nextpage" href="../hybrid/">Hybrid sampler »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.3.0 on <span class="colophon-date" title="Sunday 7 April 2024 15:16">Sunday 7 April 2024</span>. Using Julia version 1.10.2.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
