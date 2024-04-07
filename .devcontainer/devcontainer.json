@@ -1,0 +1,42 @@
+{
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+	"runArgs": [
+        "-v", "/etc/timezone:/etc/timezone:ro",
+        "-v", "/etc/localtime:/etc/localtime:ro"
+    ],
+	"features": {
+		"ghcr.io/devcontainers/features/github-cli:1": {
+			"installDirectlyFromGitHubRelease": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": true,
+			"configureZshAsDefaultShell": true,
+			"installOhMyZsh": true,
+			"installOhMyZshConfig": true,
+			"upgradePackages": true,
+			"nonFreePackages": true,
+			"username": "automatic",
+			"userUid": "automatic",
+			"userGid": "automatic"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"github.vscode-github-actions",
+				"julialang.language-julia",
+				"ms-toolsai.jupyter",
+				"tamasfe.even-better-toml"
+			],
+			"settings": {
+				"julia.executablePath": "~/.juliaup/bin/julia"
+			}
+		}
+	},
+	"onCreateCommand": "bash .devcontainer/onCreate.sh",
+	"postCreateCommand": "bash .devcontainer/postCreate.sh",
+	"mounts": [
+		"source=${localEnv:MY_DEVCONTAINERS_SECRETS_DIR},target=/home/vscode/secrets,type=bind,ro,consistency=cached"
+	]
+}
